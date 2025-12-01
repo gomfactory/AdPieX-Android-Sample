@@ -1,0 +1,53 @@
+/*******************************************************************************
+ * Copyright (c) 2016 GomFactory, Inc. All Rights Reserved.
+ ******************************************************************************/
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 36
+    namespace "com.gomfactory.adpiex.sample"
+
+    defaultConfig {
+        applicationId "com.gomfactory.adpiex.sample"
+        minSdk 23
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.core:core-ktx:1.17.0'
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.activity:activity:1.10.1'
+
+    // AdPie SDK
+    implementation 'com.github.adxcorp:adpiex-android-sdk:1.0.0-beta1'
+
+    // Google Play Services SDK (required)
+    implementation 'com.google.android.gms:play-services-ads:24.7.0'
+
+    // Image Module for AdPie Native Ad (optional)
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    // AppLovin SDK (compile only)
+    compileOnly 'com.applovin:applovin-sdk:13.5.0'
+}
