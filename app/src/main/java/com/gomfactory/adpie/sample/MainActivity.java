@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.adpie_logo), "Interstitial Ad - Image ", "전면 광고 - 이미지");
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.adpie_logo), "Interstitial Ad - Video ", "전면 광고 - 비디오");
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.adpie_logo), "Rewarded Video Ad - Portrait", "리워드 비디오 광고 - 세로");
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.adpie_logo), "Rewarded Video Ad - Landscape", "리워드 비디오 광고 - 가로");
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.adpie_logo), "Rewarded Ad - Portrait", "리워드 광고 - 세로");
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.adpie_logo), "Rewarded Ad - Landscape", "리워드 광고 - 가로");
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.adpie_logo), "Native Ad", "네이티브 광고");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -27,7 +27,7 @@ public class RewardedAdActivity extends AppCompatActivity {
 
     public static final String TAG = RewardedAdActivity.class.getSimpleName();
 
-    private RewardedAd rewardedVideoAd;
+    private RewardedAd rewardedAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +62,9 @@ public class RewardedAdActivity extends AppCompatActivity {
         tvRewardedVideoSlotId.setText("Slot ID : " + mSlotId);
 
         // Insert your AdPie-Slot-ID
-        rewardedVideoAd = new RewardedAd(this, mSlotId);
+        rewardedAd = new RewardedAd(this, mSlotId);
 
-        rewardedVideoAd.setAdListener(new RewardedAd.RewardedAdListener() {
+        rewardedAd.setAdListener(new RewardedAd.RewardedAdListener() {
             @Override
             public void onAdLoaded() {
                 printMessage(RewardedAdActivity.this, "onAdLoaded");
@@ -102,17 +102,17 @@ public class RewardedAdActivity extends AppCompatActivity {
         });
 
         // Insert your SSV User Id (Optional)
-        rewardedVideoAd.setUserIdForSSV("");
+        rewardedAd.setUserIdForSSV("");
         // Insert your SSV Custom Data (Optional)
-        rewardedVideoAd.setCustomDataForSSV("");
+        rewardedAd.setCustomDataForSSV("");
 
         Button btnRvLoad = (Button) findViewById(R.id.button_rv_load);
         btnRvLoad.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                if (rewardedVideoAd != null) {
-                    rewardedVideoAd.load();
+                if (rewardedAd != null) {
+                    rewardedAd.load();
                 }
             }
         });
@@ -122,8 +122,8 @@ public class RewardedAdActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if (rewardedVideoAd.isLoaded()) {
-                    rewardedVideoAd.show();
+                if (rewardedAd.isLoaded()) {
+                    rewardedAd.show();
                 } else {
                     printMessage(RewardedAdActivity.this, "Not ready!");
                 }
@@ -141,9 +141,9 @@ public class RewardedAdActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        if (rewardedVideoAd != null) {
-            rewardedVideoAd.destroy();
-            rewardedVideoAd = null;
+        if (rewardedAd != null) {
+            rewardedAd.destroy();
+            rewardedAd = null;
         }
 
         super.onDestroy();

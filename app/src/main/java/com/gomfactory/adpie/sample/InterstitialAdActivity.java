@@ -70,18 +70,6 @@ public class InterstitialAdActivity extends AppCompatActivity
         interstitialAd = new InterstitialAd(this, mSlotId);
         interstitialAd.setAdListener(this);
 
-        interstitialAd.setVideoAdPlaybackListener(new VideoAdPlaybackListener() {
-            @Override
-            public void onVideoAdStarted() {
-                printMessage(InterstitialAdActivity.this, "Interstitial onVideoAdStarted");
-            }
-
-            @Override
-            public void onVideoFinished(FinishState finishState) {
-                printMessage(InterstitialAdActivity.this, "Interstitial onVideoFinished : " + finishState);
-            }
-        });
-
         button = (Button) findViewById(R.id.button_interstitial_load);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
